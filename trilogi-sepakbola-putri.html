@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Trilogi Sepak Bola Putri — Menyulam Asa Menuju Garuda Pertiwi</title>
+<meta content="Women's Soccer Trilogy: MilkLife Soccer Challenge All-Stars, HYDROPLUS Soccer League All-Stars, dan Srikandi Merdeka Cup 2026." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;600;700;800;900&amp;family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<style type="text/tailwindcss">
+        :root {
+            --color-maroon: #7A0E2E;
+            --color-maroon-dark: #33081A;
+            --color-black: #0A0A0A;
+            --color-pink: #E6197A;
+            --color-teal: #14877D;
+            --color-cream: #F5EDE9;
+        }
+        @theme {
+            --font-bigshoulders: "Big Shoulders Display", sans-serif;
+            --font-inter: "Inter", sans-serif;
+            --color-maroon: var(--color-maroon);
+            --color-maroon-dark: var(--color-maroon-dark);
+            --color-black: var(--color-black);
+            --color-pink: var(--color-pink);
+            --color-teal: var(--color-teal);
+            --color-cream: var(--color-cream);
+        }
+        html, body { min-height: 100%; overflow-x: hidden; scroll-behavior: smooth; }
+        [data-scroll-container] { overflow-x: hidden; }
+        @media (min-width: 1025px) {
+            html, body { height: 100%; overflow: hidden; }
+            [data-scroll-container] { overflow: hidden; }
+        }
+        .container { @apply mx-auto px-5; }
+        .header-dropdown-content { max-height: 0; opacity: 0; overflow: hidden; transition: max-height .35s ease, opacity .25s ease; }
+        .header-dropdown-content.active { max-height: 420px; opacity: 1; }
+        .header-dropdown-content a.active { color: var(--color-pink); }
+        main p { @apply mb-4; }
+        main p:last-child { @apply mb-0; }
+        .pin-wrap::-webkit-scrollbar { display: none; }
+        @keyframes mouse-scroll { 0% { opacity: 0; top: 8px; } 50% { opacity: 1; top: 15px; } 100% { opacity: 0; top: 22px; } }
+        .img-premium {
+            border-radius: 1rem; overflow: hidden; position: relative; isolation: isolate;
+            box-shadow: 0 25px 50px -20px rgba(0,0,0,0.6);
+        }
+        .img-premium::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08); pointer-events: none; }
+        .img-premium img { transition: transform .6s ease; }
+        .img-premium:hover img { transform: scale(1.03); }
+        body::before {
+            content: ""; position: fixed; inset: 0; z-index: 999; pointer-events: none;
+            opacity: 0.035; mix-blend-mode: overlay;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+        .kicker { display: flex; align-items: center; gap: 0.75rem; font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 700; }
+        .kicker .rule { height: 1px; flex: 1; background: currentColor; opacity: 0.3; }
+        .sponsor-chip {
+            display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px 8px 8px;
+            border-radius: 999px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.04);
+        }
+        .sponsor-chip .dot { width: 30px; height: 30px; border-radius: 999px; display: flex; align-items: center; justify-content: center; font-family: "Big Shoulders Display", sans-serif; font-weight: 700; font-size: 0.7rem; color: white; overflow: hidden; }
+        .avatar-initial {
+            width: 76px; height: 76px; border-radius: 999px; flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center;
+            font-family: "Big Shoulders Display", sans-serif; font-weight: 700; font-size: 1.5rem; color: white;
+            border: 2px solid rgba(255,255,255,0.15);
+        }
+        .name-tag { display: inline-block; background: var(--color-teal); color: white; font-weight: 700; font-size: 0.72rem; padding: 3px 12px; border-radius: 4px; }
+        .quote-block { position: relative; border-left: 3px solid rgba(255,255,255,0.4); padding: 1.5rem 1.5rem 1.5rem 2rem; }
+        .quote-mark { font-family: Georgia, serif; font-size: 3.5rem; line-height: 0.5; opacity: 0.35; display: block; }
+        .video-embed { position: relative; width: 100%; aspect-ratio: 16/9; border-radius: 1rem; overflow: hidden; box-shadow: 0 25px 50px -20px rgba(0,0,0,0.6); }
+        .video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+        .player-list { list-style: decimal; padding-left: 1.25rem; }
+        .player-list li { margin-bottom: 0.5rem; }
+        .player-list li::marker { color: var(--color-pink); font-weight: 700; }
+    </style>
+</head>
+<body class="font-inter bg-black text-cream">
+<!-- Splash Screen -->
+<div class="fixed inset-0 bg-maroon-dark flex flex-col items-center justify-center z-[9999]" id="splash-screen">
+<div class="flex flex-col items-center space-y-6">
+<div class="opacity-0 translate-y-4 flex flex-col items-center" id="splash-logo">
+<span class="font-bigshoulders text-cream text-3xl md:text-5xl uppercase tracking-tight leading-none">Trilogi</span>
+<span class="text-pink text-xs md:text-sm tracking-[0.3em] uppercase mt-2">Sepak Bola Putri</span>
+</div>
+<div class="w-48 h-[3px] bg-white/10 overflow-hidden">
+<div class="h-full w-0 bg-pink" id="splash-progress"></div>
+</div>
+</div>
+</div>
+<!-- NAVBAR single-pill -->
+<header class="header fixed top-0 inset-x-0 z-50">
+<div class="container max-w-4xl pt-4">
+<div class="header-wrapper relative rounded-[28px] bg-gradient-to-r from-maroon-dark to-maroon text-cream shadow-[0_10px_30px_-10px_rgba(0,0,0,0.5)] overflow-hidden border border-white/10">
+<div class="flex items-center h-16 px-3 pl-4 gap-3">
+<div class="hidden sm:flex items-center gap-2 shrink-0">
+<img alt="MilkLife Soccer Challenge" class="h-9 w-auto object-contain" src="https://raw.githubusercontent.com/Tito590/design/main/LOGO%20MLSC%20ALL%20STARS%202026%201.png"/>
+<img alt="HYDROPLUS Soccer League" class="h-9 w-auto object-contain" src="https://raw.githubusercontent.com/Tito590/design/main/logo%20allstart.png"/>
+<img alt="Srikandi Merdeka Cup" class="h-9 w-auto object-contain" src="https://raw.githubusercontent.com/Tito590/design/main/logosrikandi.png"/>
+</div>
+<span class="line-clamp-1 flex-1 font-bold text-sm md:text-base">Trilogi Sepak Bola Putri</span>
+<div class="header-socmed hidden sm:flex gap-1.5 items-center shrink-0">
+<a class="header-socmed-item header-socmed-item--fb w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-xs font-bold transition-colors" href="#">f</a>
+<a class="header-socmed-item header-socmed-item--x w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-xs font-bold transition-colors" href="#">x</a>
+<a class="header-socmed-item header-socmed-item--link w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-xs font-bold transition-colors" href="#">c</a>
+<a class="header-socmed-item header-socmed-item--wa w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-xs font-bold transition-colors" href="#">w</a>
+</div>
+<button class="header-dropdown-btn shrink-0 cursor-pointer group flex items-center gap-2 rounded-full bg-cream text-maroon-dark pl-4 pr-3 py-2 font-semibold text-xs md:text-sm">
+<span class="whitespace-nowrap">Telusuri Cerita</span>
+<svg class="transition-transform group-[.active]:rotate-180" fill="none" height="7" viewbox="0 0 13 9" width="11" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.646484 1.30005L6.49969 7.70005L12.3529 1.30005" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<div class="header-dropdown-content px-5">
+<div class="border-t border-white/10 pt-3 pb-4 flex flex-col gap-3 text-sm text-cream/70 *:transition-colors">
+<a data-scroll-to="" href="#scroll1">Latar belakang trilogi</a>
+<a data-scroll-to="" href="#scroll3">HYDROPLUS Soccer League</a>
+<a data-scroll-to="" href="#scroll4">Srikandi Merdeka Cup</a>
+<a data-scroll-to="" href="#scroll5">Apa kata mereka</a>
+<a data-scroll-to="" href="#scroll2">MilkLife Soccer Challenge</a>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="relative" data-scroll-container="">
+<main class="main relative z-0">
+<!-- HERO -->
+<section class="min-h-dvh relative bg-maroon overflow-hidden" id="hero">
+<img alt="Trilogi Sepak Bola Putri" class="absolute inset-0 w-full h-full object-cover object-top" data-scroll="" data-scroll-speed="1" id="hero-art" src="https://raw.githubusercontent.com/Tito590/design/refs/heads/main/Header.jpg"/>
+</section>
+<!-- LATAR BELAKANG -->
+<section class="text-cream bg-black py-16 relative z-10" id="scroll1">
+<div class="container max-w-2xl space-y-6">
+<h2 class="font-bigshoulders text-2xl md:text-4xl uppercase leading-tight" data-cms="latar-belakang__1">Menyulam Asa Pesepak Bola Putri<br/>Dari Belia Menuju Seragam Garuda</h2>
+<p data-cms="latar-belakang__2">Komitmen Bakti Olahraga Djarum Foundation untuk membesarkan ekosistem sepak bola putri yang dimulai pada 2023 sudah membuahkan hasil. Tiga turnamen di Kudus, Jawa Tengah, mulai Juni hingga Agustus 2026, menjadi bukti dengan pembinaan yang serius dan diiringi kompetisi berkesinambungan, bisa menjadi fondasi lahirnya talenta-talenta baru sepak bola putri Indonesia.</p>
+<p data-cms="latar-belakang__3">Pesta sepak bola putri di Kudus, Jawa Tengah, bertajuk Women's Soccer Trilogy diawali dengan MilkLife Soccer Challenge All-Stars 2025/2026 pada 23-28 Juni 2026. Kemudian berlanjut dengan HYDROPLUS Soccer League All-Stars 2025/2026 pada 5-12 Juli 2026, dan ditutup dengan Srikandi Merdeka Cup 2026 yang digelar pada 14-23 Agustus 2026.</p>
+</div>
+</section>
+<!-- HYDROPLUS -->
+<section class="relative z-10 bg-black text-cream py-16" id="scroll3">
+<div class="container max-w-2xl space-y-6 text-center">
+<img alt="HYDROPLUS Soccer League All-Stars" class="mx-auto h-32 md:h-40 w-auto" src="https://raw.githubusercontent.com/Tito590/design/main/logo%20allstart.png"/>
+<h2 class="font-bigshoulders text-2xl md:text-4xl uppercase" data-cms="hydroplus__1">HYDROPLUS Soccer League All-Stars 2025/2026</h2>
+</div>
+<div class="container max-w-2xl space-y-4 text-left mt-6">
+<p data-cms="hydroplus__2">Turnamen sepak bola putri ini mempertemukan tim dari sekolah sepak bola (SSB) yang berhasil menjadi juara dan runner-up di masing-masing regional. Turnamen tersebut digelar dengan dua kelompok umur, yaitu U-15 dan U-18.</p>
+<p data-cms="hydroplus__3">Tim peserta lebih dulu bertanding di masing-masing regional, yaitu di Jawa Timur, Jawa Tengah, Jawa Barat, dan Jabodetabek. Dengan menggunakan sistem liga dan digelar sekitar delapan bulan, dua tim teratas di klasemen U-15 dan U-18 masing-masing regional berhak melaju ke HYDROPLUS Soccer League All-Stars 2025/2026.</p>
+<p data-cms="hydroplus__4">Selain memperebutkan status terbaik di kategori U-15 dan U-18, ada talent scouting yang dilakukan oleh Coach Takumi, Coach Timo Scheunemann, dan Coach Jacksen F Tiago. Ketiganya mencari pemain yang akan memperkuat dua tim Indonesia di Srikandi Merdeka Cup 2026.</p>
+</div>
+</section>
+<!-- SRIKANDI -->
+<section class="relative z-10 bg-black text-cream py-16" id="scroll4">
+<div class="container max-w-2xl space-y-6 text-center">
+<img alt="Srikandi Merdeka Cup 2026" class="mx-auto h-32 md:h-40 w-auto" src="https://raw.githubusercontent.com/Tito590/design/main/logosrikandi.png"/>
+<h2 class="font-bigshoulders text-2xl md:text-4xl uppercase" data-cms="srikandi__1">Srikandi Merdeka Cup 2026</h2>
+</div>
+<div class="container max-w-2xl space-y-4 text-left mt-6">
+<p data-cms="srikandi__2">Penutup dari rangkaian Women's Soccer Trilogy ini merupakan turnamen sepak bola putri yang diinisiasi oleh Bakti Olahraga Djarum Foundation dengan mempertemukan dua tim Indonesia dengan tim-tim dari negara Asia lainnya, yaitu Malaysia, Thailand, Singapura, Hong Kong, Arab Saudi, dan Yordania.</p>
+<p data-cms="srikandi__3">Dua tim Indonesia, masing-masing diperkuat 23 pemain. Mereka merupakan hasil seleksi Coach Takumi, Coach Timo, dan Coach Jacksen, dari HYDROPLUS Soccer League All-Stars 2025/2026 dan fase regional HYDROPLUS Soccer League 2025/2026, serta pemain yang selama ini sudah masuk skuad Garuda Pertiwi.</p>
+</div>
+</section>
+<!-- TESTIMONI -->
+<section class="relative z-10 bg-black text-cream py-16" id="scroll5">
+<div class="container max-w-3xl space-y-12">
+<div>
+<h2 class="font-bigshoulders text-3xl md:text-5xl uppercase leading-tight" data-cms="testimoni__1">Apa Kata Mereka Tentang<br/><span class="text-pink">Trilogi Sepak Bola Putri</span></h2>
+</div>
+<div class="space-y-10">
+<div class="flex flex-col sm:flex-row gap-5">
+<img alt="Yoppy Rosimin" class="w-32 h-32 md:w-36 md:h-36 rounded-full object-cover border-2 border-white/15 shrink-0" src="https://raw.githubusercontent.com/Tito590/design/main/yoppy.png"/>
+<div class="space-y-2">
+<span class="name-tag">Yoppy Rosimin</span>
+<p class="text-cream/50 text-sm" data-cms="testimoni__2">Program Director Bakti Olahraga Djarum Foundation</p>
+<p class="text-cream/80 italic text-sm md:text-base" data-cms="testimoni__3">"Trilogi ini melengkapi ekosistem yang selama ini sudah dibuat, mulai dari MilkLife Soccer Challenge dengan KU10, KU12, dan juga ada KU8, ada pula HYDROPLUS Soccer League dengan U-15 dan U-18, yang artinya sudah ada kompetisi yang berjenjang."</p>
+<p class="text-cream/80 italic text-sm md:text-base" data-cms="testimoni__4">"Kalau sudah berjenjang, tinggal satu lagi, yaitu tingkat internasional. Kami membuat Srikandi Merdeka Cup sebagai persiapan bagi anak-anak itu nantinya menuju Timnas Indonesia."</p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row-reverse gap-5">
+<img alt="Teddy Tjahjono" class="w-32 h-32 md:w-36 md:h-36 rounded-full object-cover border-2 border-white/15 shrink-0" src="https://raw.githubusercontent.com/Tito590/design/main/teddy%20tjahyono.png"/>
+<div class="space-y-2">
+<span class="name-tag">Teddy Tjahjono</span>
+<p class="text-cream/50 text-sm" data-cms="testimoni__5">Program Director MilkLife Soccer Challenge dan HYDROPLUS Soccer League</p>
+<p class="text-cream/80 italic text-sm md:text-base" data-cms="testimoni__6">"Women's Soccer Trilogy bertujuan membangun platform ekosistem pembinaan sepak bola putri yang terintegrasi. Pembinaan dimulai dari MilkLife Soccer Challenge sebagai pengenalan, berlanjut ke HYDROPLUS Soccer League, dan ada pemain yang terpilih untuk berlaga di Srikandi Merdeka Cup."</p>
+<p class="text-cream/80 italic text-sm md:text-base" data-cms="testimoni__7">"Kami ingin setiap pemain memiliki jalur pengembangan yang utuh, dari usia dini berproses melalui kompetisi yang kompetitif, sampai ke level profesional. Jadi mereka memiliki fondasi kuat untuk meniti karier sebagai pesepak bola di masa mendatang."</p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-5">
+<img alt="Sam'ani Intakoris" class="w-32 h-32 md:w-36 md:h-36 rounded-full object-cover border-2 border-white/15 shrink-0" src="https://raw.githubusercontent.com/Tito590/design/main/sam%27ani%20bupati.png"/>
+<div class="space-y-2">
+<span class="name-tag">Sam'ani Intakoris</span>
+<p class="text-cream/50 text-sm" data-cms="testimoni__8">Bupati Kudus</p>
+<p class="text-cream/80 italic text-sm md:text-base" data-cms="testimoni__9">"Kami percaya sepak bola putri bisa tumbuh dan berkembang dengan baik. Terlebih Kabupaten Kudus menjadi pusat pengembangan sepak bola putri yang selaras dengan visi untuk mendorong sport tourism. Tak hanya itu, ajang ini juga mendongkrak potensi ekonomi kerakyatan melalui UMKM yang ikut terlibat dan mendukung di seluruh lini penyelenggaraan."</p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row-reverse gap-5">
+<img alt="Bellinda Birton" class="w-32 h-32 md:w-36 md:h-36 rounded-full object-cover border-2 border-white/15 shrink-0" src="https://raw.githubusercontent.com/Tito590/design/main/belinda%20wakil%20bupatu.png"/>
+<div class="space-y-2">
+<span class="name-tag">Bellinda Birton</span>
+<p class="text-cream/50 text-sm" data-cms="testimoni__10">Wakil Bupati Kudus</p>
+<p class="text-cream/80 italic text-sm md:text-base" data-cms="testimoni__11">"Selain dikenal sebagai kota yang melahirkan atlet bulutangkis berprestasi, kami berharap Kudus juga makin dikenal sebagai pusat pengembangan sepak bola putri Indonesia."</p>
+<p class="text-cream/80 italic text-sm md:text-base" data-cms="testimoni__12">"Penyelenggaraan Women's Soccer Trilogy tentu memiliki dampak positif dalam menggerakkan perekonomian masyarakat, khususnya melalui UMKM."</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- MILKLIFE: BANNER JUDUL -->
+<section class="relative z-10 min-h-[70vh] flex items-center justify-center overflow-hidden">
+<img alt="MilkLife Soccer Challenge All-Stars Final" class="absolute inset-0 w-full h-full object-cover" data-scroll="" data-scroll-speed="0.6" src="https://raw.githubusercontent.com/Tito590/design/main/bgsection-milklife.png"/>
+<span class="absolute inset-0 bg-black/55"></span>
+<div class="container max-w-3xl mx-auto relative z-10 text-center text-cream">
+<h2 class="font-bigshoulders uppercase leading-[0.95] tracking-tight perspective-[600px]" data-cms="milklife-banner-judul__1">
+<span class="c-header_title_line block opacity-0 rotate-x-[-80deg] origin-top text-3xl md:text-5xl">MilkLife Soccer Challenge</span>
+<span class="c-header_title_line c-header_title_line--end block opacity-0 rotate-x-[-80deg] origin-top text-3xl md:text-5xl text-emerald-400">All-Stars 2025/2026</span>
+</h2>
+</div>
+</section>
+<!-- MILKLIFE: EKOSISTEM -->
+<section class="relative z-10 bg-[#3F7D32] text-cream py-16" id="scroll2">
+<div class="container max-w-2xl space-y-4">
+<h2 class="font-bigshoulders text-2xl md:text-4xl uppercase text-center mb-4" data-cms="milklife-ekosistem__1">Titik Awal Ekosistem Sepak Bola Putri Indonesia</h2>
+<p class="font-bold" data-cms="milklife-ekosistem__2">"Terjadi Gooooool!"</p>
+<p data-cms="milklife-ekosistem__3">Pekik suara Martono Aero dari pinggir lapangan Supersoccer Arena menggelegar kala pemain MilkLife All Stars Kudus berhasil menjebol gawang lawan di perempat final MilkLife Soccer Challenge All-Stars 2025/2026. Raisha Qaireen Batrisyia melakukan sujud syukur setelah berhasil mencetak gol keduanya bagi timnya, sore itu, Jumat 26 Juni 2026.</p>
+<p data-cms="milklife-ekosistem__4">Raisha mencetak gol kedua MilkLife All-Stars Kudus ke gawang MilkLife All-Stars Tangerang. Kemenangan 2-0 tersebut memastikan langkah MilkLife All-Stars Kudus ke babak semifinal MilkLife Soccer Challenge All-Stars 2025/2026.</p>
+<p data-cms="milklife-ekosistem__5">MilkLife Soccer Challenge All-Stars 2025/2026 digelar di Supersoccer Arena, Kudus, Jawa Tengah, dengan mempertandingkan 12 tim All-Stars dari kota penyelenggara seri regional. Perinciannya yaitu MilkLife All-Stars Kudus, Solo, Yogyakarta, Semarang, Surabaya, Malang, Jakarta, Tangerang, Bekasi, Bandung, Samarinda, hingga MilkLife All-Stars Banjarmasin.</p>
+<p data-cms="milklife-ekosistem__6">Setiap tim yang bertanding di MilkLife Soccer Challenge All-Stars 2025/2026 diperkuat pemain-pemain terbaik yang sebelumnya dipilih dari setiap seri regional untuk mengikuti extra training yang juga digelar sebagai bagian dari pembinaan siswi-siswi SD yang memiliki potensi dan antusiasme dalam bersepak bola.</p>
+<p data-cms="milklife-ekosistem__7">MilkLife Soccer Challenge All-Stars 2025/2026 digelar selama enam hari, dari 23 hingga 28 Juni 2026, dimulai dengan fase grup selama tiga hari pertama dan berlanjut dengan perempat final, semifinal dan final pada tiga hari terakhir.</p>
+</div>
+</section>
+<!-- MILKLIFE: GRUP -->
+<section class="relative z-10 bg-[#3F7D32] text-cream pb-16">
+<div class="container max-w-4xl space-y-6 text-center">
+<h2 class="font-bigshoulders text-2xl md:text-4xl uppercase" data-cms="milklife-grup__1">Grup MilkLife Soccer Challenge</h2>
+<img alt="Grup A, B, C MilkLife Soccer Challenge All-Stars" class="mx-auto w-full max-w-3xl h-auto" src="https://raw.githubusercontent.com/Tito590/design/main/logo%20lengkap.png"/>
+</div>
+</section>
+<!-- MILKLIFE: PEREMPAT FINAL -->
+<section class="relative z-10 bg-[#3F7D32] text-cream py-16">
+<div class="container max-w-2xl space-y-4">
+<p data-cms="milklife-perempat-final__1">Setelah tiga hari fase grup berlangsung, tim MilkLife All-Stars Jakarta, Semarang, dan Kudus menjadi juara grup, sementara Surabaya, Solo, dan Tangerang menjadi runner-up. Untuk melengkapi delapan tim yang lolos ke perempat final, Yogyakarta dan Malang, yang menjadi dua tim peringkat ketiga terbaik dari tiga grup, ikut melangkah ke fase knockout.</p>
+<p data-cms="milklife-perempat-final__2">Dari hasil drawing perempat final MilkLife Soccer Challenge All-Stars 2025/2026, Kudus bertemu Tangerang, sementara Solo bertemu Surabaya. Jakarta berhadapan dengan Malang, sementara Semarang bersua Yogyakarta.</p>
+<div class="img-premium my-6">
+<img alt="Aksi perempat final MilkLife Soccer Challenge" class="w-full h-auto object-cover statImage" data-scroll="" data-scroll-speed="-1" data-type="left" src="https://raw.githubusercontent.com/Tito590/design/main/pink.png"/>
+</div>
+<p data-cms="milklife-perempat-final__3">Kudus, yang juga merupakan juara bertahan MilkLife Soccer Challenge All-Stars, menang 2-0 atas Tangerang di perempat final kemudian bertemu Surabaya di semifinal, setelah Locita Anggraini dkk. berhasil menang 2-1 atas Solo di perempat final.</p>
+<p data-cms="milklife-perempat-final__4">Sementara itu, Jakarta lolos ke semifinal berkat kemenangan telak 4-0 atas Malang. Yogyakarta dipastikan menjadi lawan Jakarta di semifinal usai mengalahkan Semarang melalui drama adu penalti di perempat final.</p>
+</div>
+</section>
+<!-- MILKLIFE: FINAL -->
+<section class="relative z-10 bg-[#3F7D32] text-cream py-16">
+<div class="container max-w-2xl space-y-4">
+<div class="img-premium mb-6">
+<img alt="Aksi final MilkLife Soccer Challenge" class="w-full h-auto object-cover statImage" data-scroll="" data-scroll-speed="-1" data-type="right" src="https://raw.githubusercontent.com/Tito590/design/main/hijau.png"/>
+</div>
+<p data-cms="milklife-final__1">Kudus dan Jakarta pada akhirnya bertemu di laga puncak. Kudus menyingkirkan Surabaya dengan skor 2-1 untuk lolos ke final, sementara Jakarta menang 1-0 atas Yogyakarta.</p>
+<p data-cms="milklife-final__2">Kualitas dua tim yang berlaga di final terbukti luar biasa. Skor tanpa gol menjadi hasil dari akhir pertandingan. Kudus kembali menjadi juara MilkLife Soccer Challenge All-Stars setelah memenangi drama adu penalti dengan skor 4-3. Ini kali kedua Kudus menjadi juara MilkLife Soccer Challenge All-Stars, setelah yang pertama terjadi pada Januari 2025.</p>
+<p data-cms="milklife-final__3">Setelah meraih gelar juara MilkLife Soccer Challenge All-Stars untuk kali kedua, pelatih kepala tim MilkLife All-Stars Kudus, Yayat Hidayat, berharap turnamen sepak bola putri KU10 dan KU12 itu bisa terus terlaksana setiap tahunnya, karena menjadi angin segar bagi perkembangan sepak bola putri Indonesia.</p>
+</div>
+</section>
+<!-- MILKLIFE: SLIDER FOTO (horizontal pin, mengikuti arah scroll) -->
+<section class="relative z-20 bg-black overflow-hidden">
+<div class="sectionPin flex items-center min-h-[70vh] lg:min-h-screen overflow-hidden">
+<div class="pin-wrap relative flex h-full items-center max-md:w-full max-md:overflow-x-auto max-md:scroll-smooth justify-start gap-0">
+<div class="step shrink-0 w-screen h-[70vh] lg:h-screen">
+<img alt="Momen MilkLife Soccer Challenge 1" class="w-full h-full object-cover" src="https://raw.githubusercontent.com/Tito590/design/main/slider%201.jpg"/>
+</div>
+<div class="step shrink-0 w-screen h-[70vh] lg:h-screen">
+<img alt="Momen MilkLife Soccer Challenge 2" class="w-full h-full object-cover" src="https://raw.githubusercontent.com/Tito590/design/main/pink.png"/>
+</div>
+<div class="step shrink-0 w-screen h-[70vh] lg:h-screen">
+<img alt="Momen MilkLife Soccer Challenge 3" class="w-full h-full object-cover" src="https://raw.githubusercontent.com/Tito590/design/main/hijau.png"/>
+</div>
+<div class="step shrink-0 w-screen h-[70vh] lg:h-screen">
+<img alt="Momen MilkLife Soccer Challenge 4" class="w-full h-full object-cover" src="https://raw.githubusercontent.com/Tito590/design/main/bgsection-milklife.png"/>
+</div>
+<div class="step shrink-0 w-screen h-[70vh] lg:h-screen">
+<img alt="Momen MilkLife Soccer Challenge 5" class="w-full h-full object-cover" src="https://raw.githubusercontent.com/Tito590/design/refs/heads/main/Header.jpg"/>
+</div>
+</div>
+</div>
+</section>
+<!-- MILKLIFE: KUTIPAN YAYAT & ADELICE -->
+<section class="relative z-10 bg-[#3F7D32] text-cream py-16">
+<div class="container max-w-2xl space-y-6">
+<blockquote class="quote-block">
+<span class="quote-mark">“</span>
+<p class="text-lg md:text-xl leading-relaxed" data-cms="milklife-kutipan-yayat-adelice__1">Sebelumnya Indonesia kesulitan mencari bibit pemain sepak bola perempuan. Kini dengan adanya MilkLife Soccer Challenge, akan sangat membantu membina hingga mendapatkan pemain terbaik. Hal itu tentu sangat positif, dan harapan saya MilkLife Soccer Challenge tetap berlanjut tahun-tahun ke depan," ujar Yayat.</p>
+</blockquote>
+<p data-cms="milklife-kutipan-yayat-adelice__2">Pengalaman bermain di MilkLife Soccer Challenge All-Stars 2026 menjadi pemantik motivasi tersendiri bagi pemain, seperti yang dirasakan gelandang tim All-Stars Malang, Adelice Maureen Hanum Faisal.</p>
+<p data-cms="milklife-kutipan-yayat-adelice__3">"Setelah merasakan bertanding di MilkLife Soccer Challenge All-Stars 2026, motivasi saya semakin bertambah untuk berlatih lebih keras dan tetap rendah hati. Semoga selanjutnya kemampuan kami bisa melampaui teman-teman dari kota lain," ujar Adelice yang juga merupakan Top Scorer MilkLife Soccer Challenge Malang Seri 2 2025/2026, setelah tim MilkLife All-Stars Malang tersingkir di perempat final.</p>
+</div>
+</section>
+<!-- MILKLIFE: VIDEO COACH JACKSEN + 34 PEMAIN -->
+<section class="relative z-10 bg-[#3F7D32] text-cream py-16">
+<div class="container max-w-2xl space-y-6">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" loading="lazy" src="https://www.youtube.com/embed/DxCtt-WbAc4" title="Jacksen F. Tiago - Head Coach MilkLife Soccer Challenge"></iframe>
+</div>
+<h2 class="font-bigshoulders text-2xl md:text-4xl uppercase leading-tight" data-cms="milklife-video-coach-jacksen-34-pemain__1">34 Pemain MilkLife Soccer Challenge All-Stars Terpilih Mewakili Indonesia ke Singapura</h2>
+<p data-cms="milklife-video-coach-jacksen-34-pemain__2">Bukan hanya melahirkan tim MilkLife All-Stars Kudus sebagai juara, program ini juga memberikan kesempatan kepada 34 pemain terpilih untuk mewakili Indonesia ke Singa Cup 2026 yang digelar di Singapura pada 31 Oktober hingga 7 November 2026.</p>
+<p data-cms="milklife-video-coach-jacksen-34-pemain__3">Dalam upacara penyerahan penghargaan MilkLife Soccer Challenge All-Stars di Supersoccer Arena, Minggu 28 Juni 2026, dua Head Coach MilkLife Soccer Challenge, Timo Scheunemann dan Jacksen F. Tiago, mengumumkan nama-nama pemain yang memperkuat tim MilkLife Strikers U-12 dan MilkLife Kickers U-14 dan mewakili Indonesia ke Singa Cup 2026.</p>
+</div>
+</section>
+<!-- MILKLIFE: STRIKERS U-12 -->
+<section class="relative z-10 bg-[#3F7D32] text-cream py-16">
+<div class="container max-w-2xl space-y-6">
+<h2 class="font-bigshoulders text-2xl md:text-4xl uppercase text-center" data-cms="milklife-strikers-u-12__1">MilkLife Strikers U-12</h2>
+<div class="img-premium">
+<img alt="MilkLife Strikers U-12" class="w-full h-auto object-cover" src="https://raw.githubusercontent.com/Tito590/design/main/milklife%20u12.png"/>
+</div>
+<ol class="player-list">
+<li>Kanaya Izzati Lathifa - SD Bukit Aksara Semarang - All-Stars Semarang (Kiper)</li>
+<li>Shafira Althafunnisa Azzahra - SD Djama'atul Ichwan Surakarta - All-Stars Solo (Kiper)</li>
+<li>Danisa Anindya Nuha Zahira - SD Nglarang Kab. Sleman - All-Stars Yogyakarta (Belakang)</li>
+<li>Hafiza Khaira Lubna Lista - SDN Jambean 2 Pati - All-Stars Kudus (Belakang)</li>
+<li>Andien Haifa Syakira - SD Cinta Kasih Tzu Chi Jakarta Barat - All-Stars Jakarta (Belakang)</li>
+<li>Sabrina Dwi Ristiyana - SDN Jambean 2 Pati - All-Stars Kudus (Belakang)</li>
+<li>Bilqis Nur Hidayah - SDN Klampis Ngasem 1 Surabaya - All-Stars Surabaya (Belakang)</li>
+<li>Adiba Sanas Primayuga - SDN 002 Kota Samarinda - All-Stars Samarinda (Belakang)</li>
+<li>Adelice Maureen Hanum Faisal - SDN Lowokwaru 3 Malang - All-Stars Malang (Tengah)</li>
+<li>Keyla Azzahra Putri - SDN Sumberjaya 2 Bekasi - All-Stars Tangerang (Tengah)</li>
+<li>Locita Waranggani Olah Nismara - SDN Pacarkeling V/186 Surabaya - All-Star Surabaya (Tengah)</li>
+<li>Emily Zitara - SDN Manukan Kulon Surabaya - All-Stars Surabaya (Tengah)</li>
+<li>Ika Wonda - SD Kristen Manahan Surakarta - All-Stars Solo (Tengah)</li>
+<li>Angelina P S Mongan - SDN Kuncilan 4 Tangerang - All-Stars Tangerang (Depan)</li>
+<li>Nadia Shakila Azzahra - SD Muhammadiyah Karangploso Kab. Bantul - All-Stars Yogyakarta (Depan)</li>
+</ol>
+</div>
+</section>
+<!-- MILKLIFE: KICKERS U-14 -->
+<section class="relative z-10 bg-[#3F7D32] text-cream py-16">
+<div class="container max-w-2xl space-y-6">
+<h2 class="font-bigshoulders text-2xl md:text-4xl uppercase text-center" data-cms="milklife-kickers-u-14__1">MilkLife Kickers U-14</h2>
+<div class="img-premium">
+<img alt="MilkLife Kickers U-14" class="w-full h-auto object-cover" src="https://raw.githubusercontent.com/Tito590/design/main/milklife%20u14.png"/>
+</div>
+<ol class="player-list">
+<li>Syafira Azzahra - SDN Rungkut Kidul II/581 Surabaya - All-Stars Surabaya (Kiper)</li>
+<li>Queisha Sava Azzalfa - SDUT Bumi Kartini Jepara - All-Stars Kudus (Kiper)</li>
+<li>Alika Nayla Putri Jabbar - SDN Manukan Kulon II/499 Surabaya - All-Stars Surabaya (Belakang)</li>
+<li>Helga Cahya Yudi Sadira - SDN Kebayoran Lama Selatan 19 Jakarta Selatan - All-Stars Jakarta (Belakang)</li>
+<li>Renanthera Aluna Addya Putri - SDUT Bumi Kartini Jepara - All-Stars Kudus (Belakang)</li>
+<li>Giada Soebianto - Edison Elementary School USA - All-Stars Malang (Belakang)</li>
+<li>Garneta Falentina Imelda - SDN 1 Tumpakrejo Kab. Malang - All-Stars Malang (Tengah)</li>
+<li>Rere Zenita Farza - SDUT Bumi Kartini Jepara - All-Stars Kudus (Tengah)</li>
+<li>Ananda Nindy Dwi Berlian - SDN Lowokwaru 4 Malang - All-Stars Malang (Tengah)</li>
+<li>Askana Sakhi Falihah - SDN 01 Daru Karangpandan Kab. Karanganyar - All-Stars Solo (Tengah)</li>
+<li>Alisa Makaila Fakhira - SDN Margahayu 3 Bekasi - All-Stars Bekasi (Tengah)</li>
+<li>Albianca Raula - SDN Kebagusan 03 Jakarta Selatan - All-Stars Jakarta (Tengah)</li>
+<li>Riyanti Saffana Suryani - SDN 129 Rancasawo Margasari Bandung - All-Stars Bandung (Tengah)</li>
+<li>Euis Siti Farhatus Sa'adah - SDN Mampang 2 Jakarta Selatan - All-Stars Jakarta (Tengah)</li>
+<li>Yumna Naziya Fina - MII Karangsari Kab. Pekalongan - All-Stars Semarang (Tengah)</li>
+<li>Anisa Tri Sholica - SDN Cideng 04 Jakarta Pusat - All-Stars Jakarta (Depan)</li>
+<li>Janeeta Alodya - SDN Sendangmulyo 04 Semarang - All-Stars Semarang (Depan)</li>
+<li>Rara Zenita Fatin - SDUT Bumi Kartini Jepara - All-Stars Kudus (Depan)</li>
+</ol>
+<p data-cms="milklife-kickers-u-14__2">Jika melihat daftar tersebut, banyak pemain yang sudah mencicipi bermain di Junior Soccer School and League (JSSL) 7's yang digelar pada April 2025 setelah terpilih menjadi yang terbaik di MilkLife Soccer Challenge All-Stars edisi pertama pada Januari 2025.</p>
+<p data-cms="milklife-kickers-u-14__3">Namun, ada juga sejumlah nama baru, seperti Euis Siti Farhatus Sa'adah, pemain tim MilkLife All-Stars Jakarta yang baru pada 2026 merasakan kesempatan bermain di kompetisi MilkLife Soccer Challenge All-Stars dan langsung terpilih untuk bisa mengikuti turnamen internasional. Euis tampak girang saat namanya diumumkan oleh Coach Timo untuk bergabung bersama tim MilkLife Kickers U-14.</p>
+</div>
+</section>
+<!-- MILKLIFE: FOTO + KUTIPAN EUIS -->
+<section class="relative z-10 bg-[#3F7D32] text-cream py-16">
+<div class="container max-w-2xl space-y-4">
+<div class="img-premium">
+<img alt="Aksi pemain MilkLife All-Stars" class="w-full h-auto object-cover statImage" data-scroll="" data-scroll-speed="-1" data-type="left" src="https://raw.githubusercontent.com/Tito590/design/main/merah-hijau.png"/>
+</div>
+<p class="italic" data-cms="milklife-foto-kutipan-euis__1">"Enggak menyangka banget, puji syukur. Saya kira enggak bakal terpilih, ternyata terpilih, tadi nama saya disebut sama Coach Timo. Saya akan berjuang semaksimal mungkin untuk bisa jadi juara," kata Euis yang sangat antusias selama mengikuti MilkLife Soccer Challenge All-Stars 2026 di Kudus.</p>
+</div>
+</section>
+<!-- MILKLIFE: EKOSISTEM MELUAS + GRAFIK -->
+<section class="relative z-10 bg-[#3F7D32] text-cream py-16">
+<div class="container max-w-2xl space-y-6">
+<h2 class="font-bigshoulders text-2xl md:text-4xl uppercase" data-cms="milklife-ekosistem-meluas-grafik__1">Titik Awal Ekosistem yang Terus Meluas</h2>
+<p data-cms="milklife-ekosistem-meluas-grafik__2">Program MilkLife Soccer Challenge yang diinisiasi Bakti Olahraga Djarum Foundation bersama MilkLife sudah berlangsung sejak 2023. Berawal digelar di Kudus pada saat itu, kini sudah ada 12 kota yang jadi penyelenggara festival sepak bola putri KU10 dan KU12 tersebut.</p>
+<p data-cms="milklife-ekosistem-meluas-grafik__3">Dalam kurun waktu sekitar tiga tahun perkembangannya sangat luar biasa. Bahkan hingga saat ini sudah ada 39.173 atlet dari 1.554 MI/SD di 12 kota penyelenggara yang terjaring oleh MilkLife Soccer Challenge.</p>
+<div class="img-premium">
+<img alt="Grafik Peserta MilkLife Soccer Challenge 2023-2026" class="w-full h-auto object-contain bg-white" src="https://raw.githubusercontent.com/Tito590/design/main/grafik%20peserta.png"/>
+</div>
+<div class="img-premium">
+<img alt="Grafik Sekolah yang Ikut Serta MilkLife Soccer Challenge" class="w-full h-auto object-contain bg-white" src="https://raw.githubusercontent.com/Tito590/design/main/grafik%20sekolah.png"/>
+</div>
+</div>
+</section>
+<!-- MILKLIFE: PENUTUP & JEMBATAN KE HYDROPLUS -->
+<section class="relative z-10 bg-[#3F7D32] text-cream py-16">
+<div class="container max-w-2xl space-y-6">
+<p data-cms="milklife-penutup-jembatan-ke-hydroplus__1">Pengembangan kompetisi MilkLife Soccer Challenge terus berjalan. Bahkan rencananya pada musim 2026/2027 ada tiga tambahan kota penyelenggara, yakni Garut, Jayapura, dan Jakarta Utara. Penambahan ini membuat ekosistem sepak bola putri Indonesia yang dimulai dari usia dini itu akan makin luas.</p>
+<blockquote class="quote-block">
+<span class="quote-mark">“</span>
+<p class="text-lg md:text-xl leading-relaxed" data-cms="milklife-penutup-jembatan-ke-hydroplus__2">Musim ini kami melihat perkembangan yang sangat positif yang terlihat dari pertandingan berlangsung lebih kompetitif mulai fase grup hingga final, kualitas permainan, semangat dan mental mereka meningkat, kemampuan antar-peserta pun kian berimbang. Perkembangan ini memberikan keyakinan kepada kami untuk memperluas jangkauan pembinaan dengan menambah tiga kota penyelenggara musim depan," kata Program Director MilkLife Soccer Challenge, Teddy Tjahjono.</p>
+</blockquote>
+<p data-cms="milklife-penutup-jembatan-ke-hydroplus__3">Perkembangan ekosistem sepak bola putri Indonesia yang dilakukan oleh Bakti Olahraga Djarum Foundation tidak sebatas menambah luas jangkauan wilayah kompetisi sepak bola usia dini. Namun, Djarum Foundation juga membentuk kompetisi baru untuk membentuk wadah bagi mereka yang sudah bertambah usia agar bisa terus melanjutkan perjuangan di lapangan hijau.</p>
+<p class="font-bold text-lg" data-cms="milklife-penutup-jembatan-ke-hydroplus__4">Wadah itu bernama HYDROPLUS Soccer League.</p>
+</div>
+</section>
+<footer class="bg-maroon-dark text-cream/30 text-center py-10 text-xs uppercase tracking-widest">
+                Women's Soccer Trilogy 2026 · Bakti Olahraga Djarum Foundation
+            </footer>
+</main>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollToPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+<script>
+        function initSmoothScroll(containerSelector) {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const heroArt = document.getElementById("hero-art");
+            if (heroArt) {
+                gsap.fromTo(heroArt, { scale: 1.06, opacity: 0.7 }, { scale: 1, opacity: 1, duration: 1.4, ease: "power2.out" });
+            }
+
+            const scroller = new LocomotiveScroll({
+                el: containerSelector,
+                smooth: true,
+                lerp: 0.08,
+                multiplier: 1.2,
+                smoothMobile: false,
+                smartphone: { smooth: true },
+                tablet: { smooth: true },
+            });
+
+            scroller.on("scroll", ScrollTrigger.update);
+
+            ScrollTrigger.scrollerProxy(containerSelector, {
+                scrollTop(value) {
+                    return arguments.length ? scroller.scrollTo(value, 0, 0) : scroller.scroll.instance.scroll.y;
+                },
+                getBoundingClientRect() {
+                    return { left: 0, top: 0, width: window.innerWidth, height: window.innerHeight };
+                },
+                pinType: containerSelector.style.transform ? "transform" : "fixed",
+            });
+
+            document.querySelectorAll("[data-scroll-to]").forEach((link) => {
+                link.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    const target = link.getAttribute("href");
+                    scroller.scrollTo(target, { offset: -80, duration: 800 });
+                });
+            });
+
+            const sections = document.querySelectorAll("section[id]");
+            const navLinks = document.querySelectorAll(".header-dropdown-content a");
+
+            scroller.on("scroll", (obj) => {
+                const scrollY = obj.scroll.y;
+                let activeSection = null;
+                sections.forEach((section) => {
+                    const sectionTop = section.offsetTop - parseInt(window.innerHeight / 2);
+                    const sectionHeight = section.offsetHeight;
+                    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                        activeSection = section.getAttribute("id");
+                    }
+                });
+                navLinks.forEach(link => {
+                    link.classList.toggle("active", activeSection && link.getAttribute("href") === `#${activeSection}`);
+                });
+            });
+
+            gsap.fromTo(".tag", {
+                opacity: 0, yPercent: 50, scale: 0.9, rotationX: -30, transformOrigin: "center bottom",
+            }, {
+                opacity: 1, yPercent: 0, scale: 1, rotationX: 0, duration: 1.2, ease: "power3.out",
+                scrollTrigger: { trigger: ".tag", scroller: containerSelector, start: "top 85%", toggleActions: "play none none reverse" },
+            });
+
+            gsap.utils.toArray(".c-header_title_line:not(.c-header_title_line--end)").forEach((line, i) => {
+                gsap.fromTo(line, {
+                    opacity: 0, rotationX: -80, yPercent: 100, transformOrigin: "top center",
+                }, {
+                    opacity: 1, rotationX: 0, yPercent: 0, duration: 1.3, delay: i * 0.25, ease: "power3.out",
+                    scrollTrigger: { trigger: line, scroller: containerSelector, start: "top 90%", toggleActions: "play none none reverse" },
+                });
+            });
+            gsap.utils.toArray(".c-header_title_line--end").forEach((line) => {
+                gsap.fromTo(line, {
+                    opacity: 0, rotationX: -80, yPercent: 100, transformOrigin: "top center",
+                }, {
+                    opacity: 1, rotationX: 0, yPercent: 0, duration: 1.4, delay: 0.55, ease: "power4.out",
+                    scrollTrigger: { trigger: line, scroller: containerSelector, start: "top 90%", toggleActions: "play none none reverse" },
+                });
+            });
+
+            const isDesktop = window.matchMedia("(min-width: 1025px)").matches;
+            gsap.utils.toArray(".pin-wrap").forEach((pinSection) => {
+                if (isDesktop) {
+                    const pinWrapWidth = pinSection.scrollWidth;
+                    const horizontalScrollLength = pinWrapWidth - window.innerWidth;
+                    gsap.to(pinSection, {
+                        x: -horizontalScrollLength, ease: "none",
+                        scrollTrigger: {
+                            trigger: pinSection.closest(".sectionPin"), scroller: containerSelector,
+                            scrub: 2, pin: true, start: "top top", end: () => "+=" + pinWrapWidth,
+                        },
+                    });
+                } else {
+                    gsap.set(pinSection, { clearProps: "all" });
+                }
+            });
+
+            document.querySelectorAll(".step").forEach((step) => {
+                const verticals = step.querySelectorAll(".line-vertical");
+                const horizontal = step.querySelector(".line-horizontal");
+                const dots = step.querySelectorAll(".dots");
+                if (!horizontal || dots.length < 2) return;
+
+                const tl = gsap.timeline({
+                    scrollTrigger: { trigger: step, scroller: containerSelector, start: "top 80%", end: "bottom 40%", scrub: 2 },
+                });
+                tl.fromTo(dots[0], { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.7)" })
+                    .to(horizontal, { scaleX: 1, duration: 0.5, ease: "power1.out" })
+                    .fromTo(dots[1], { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.7)" });
+                if (verticals.length) {
+                    tl.to(verticals[0], { scaleY: 1, duration: 0.5, ease: "power1.out" });
+                }
+            });
+
+            document.querySelectorAll(".avatar-initial, .img-premium, .quote-block, .video-embed, .player-list").forEach((el) => {
+                gsap.fromTo(el, { opacity: 0, y: 24 }, {
+                    opacity: 1, y: 0, duration: 0.9, ease: "power2.out",
+                    scrollTrigger: { trigger: el, scroller: containerSelector, start: "top 92%", toggleActions: "play none none reverse" },
+                });
+            });
+
+            ScrollTrigger.addEventListener("refresh", () => scroller.update());
+            ScrollTrigger.refresh();
+        }
+
+        // ==================================================================
+        // CMS LOADER: mengambil teks terbaru dari Google Docs (via Apps Script)
+        // ==================================================================
+        // GANTI DENGAN URL APPS SCRIPT kamu setelah deploy (lihat panduan di Code.gs)
+        const CMS_ENDPOINT = "https://script.google.com/macros/s/AKfycbyZtlhZUY2Z17W941pzNVYmLMeYeP5qLkxGj_nNCdJSvKRvVLE6jxWyosOiIwTvQNMg-Q/exec";
+
+        function applyCmsData(data) {
+            document.querySelectorAll("[data-cms]").forEach((el) => {
+                const key = el.getAttribute("data-cms");
+                if (!Object.prototype.hasOwnProperty.call(data, key) || !data[key]) return;
+
+                const paragraphs = String(data[key]).split("\n").map((s) => s.trim()).filter(Boolean);
+
+                if (paragraphs.length <= 1) {
+                    el.textContent = paragraphs[0] || String(data[key]);
+                    return;
+                }
+
+                // Lebih dari satu paragraf (redaksi menekan Enter di Google Docs):
+                // pecah jadi beberapa elemen terpisah (bukan <br>) supaya jarak antar-paragraf
+                // tetap konsisten dengan gaya desain (margin bawah antar paragraf).
+                const tagName = el.tagName;
+                const className = el.className;
+                const frag = document.createDocumentFragment();
+                paragraphs.forEach((text, i) => {
+                    const newEl = document.createElement(tagName);
+                    newEl.className = className;
+                    newEl.textContent = text;
+                    if (i === 0) newEl.setAttribute("data-cms", key);
+                    frag.appendChild(newEl);
+                });
+                el.replaceWith(frag);
+            });
+        }
+
+        function loadCmsContent() {
+            return new Promise((resolve) => {
+                if (!CMS_ENDPOINT || CMS_ENDPOINT.indexOf("GANTI_DENGAN") === 0) {
+                    // Belum di-deploy / URL belum diisi -> lewati diam-diam, pakai teks default di HTML
+                    resolve();
+                    return;
+                }
+
+                const finish = () => resolve();
+
+                // Metode 1: fetch biasa (JSON)
+                fetch(CMS_ENDPOINT, { cache: "no-store" })
+                    .then((res) => { if (!res.ok) throw new Error("HTTP " + res.status); return res.json(); })
+                    .then((data) => { applyCmsData(data); finish(); })
+                    .catch(() => {
+                        // Metode 2 (fallback): JSONP lewat <script> tag, aman dari blokir CORS
+                        const callbackName = "__cmsCallback_" + Date.now();
+                        const script = document.createElement("script");
+                        let done = false;
+
+                        window[callbackName] = (data) => {
+                            if (done) return;
+                            done = true;
+                            applyCmsData(data);
+                            delete window[callbackName];
+                            script.remove();
+                            finish();
+                        };
+
+                        script.src = CMS_ENDPOINT + (CMS_ENDPOINT.indexOf("?") > -1 ? "&" : "?") + "callback=" + callbackName;
+                        script.onerror = () => {
+                            if (done) return;
+                            done = true;
+                            console.warn("Gagal memuat konten CMS dari Google Docs, memakai teks default.");
+                            delete window[callbackName];
+                            finish();
+                        };
+                        document.head.appendChild(script);
+
+                        // Jaga-jaga kalau tidak ada respons sama sekali dalam 6 detik
+                        setTimeout(() => { if (!done) { done = true; finish(); } }, 6000);
+                    });
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            loadCmsContent().then(() => {
+            const scrollerSelector = document.querySelector("[data-scroll-container]");
+            const splash = document.getElementById("splash-screen");
+            const logo = document.getElementById("splash-logo");
+            const progress = document.getElementById("splash-progress");
+
+            document.body.style.overflow = "hidden";
+            const splashTl = gsap.timeline({
+                defaults: { ease: "power2.out" },
+                onComplete: () => {
+                    initSmoothScroll(scrollerSelector);
+                    gsap.to(splash, {
+                        opacity: 0, duration: 0.8,
+                        onComplete: () => {
+                            splash.style.display = "none";
+                            document.body.style.overflow = "";
+                        },
+                    });
+                },
+            });
+            splashTl.to(logo, { opacity: 1, y: 0, duration: 0.8 })
+                .to(progress, { width: "100%", duration: 1.2, ease: "power1.inOut" }, "-=0.2")
+                .to(logo, { scale: 1.05, duration: 0.4, yoyo: true, repeat: 1 }, "-=0.2");
+
+            const headerTrigger = document.querySelector('.header-dropdown-btn');
+            const headerDropdown = document.querySelector('.header-dropdown-content');
+            if (headerTrigger && headerDropdown) {
+                headerTrigger.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    const isOpen = headerDropdown.classList.contains('active');
+                    headerDropdown.classList.toggle('active', !isOpen);
+                    headerTrigger.classList.toggle('active', !isOpen);
+                });
+                document.addEventListener('click', (event) => {
+                    if (!headerTrigger.contains(event.target) && !headerDropdown.contains(event.target)) {
+                        headerDropdown.classList.remove('active');
+                        headerTrigger.classList.remove('active');
+                    }
+                });
+                headerDropdown.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        headerDropdown.classList.remove('active');
+                        headerTrigger.classList.remove('active');
+                    });
+                });
+            }
+
+            const shareParent = document.querySelector('.header-socmed');
+            if (shareParent) {
+                const shareUrl = window.location.href;
+                const shareTitle = document.title;
+                const fbBtn = shareParent.querySelector('.header-socmed-item--fb');
+                const xBtn = shareParent.querySelector('.header-socmed-item--x');
+                const waBtn = shareParent.querySelector('.header-socmed-item--wa');
+                if (fbBtn) fbBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+                if (xBtn) xBtn.href = `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareTitle)}`;
+                if (waBtn) waBtn.href = `https://wa.me/?text=${encodeURIComponent(shareTitle + " " + shareUrl)}`;
+            }
+            }); // end loadCmsContent().then()
+        });
+    </script>
+</body>
+</html>
