@@ -606,12 +606,12 @@
                 // Apps Script lambat "cold start", JSONP juga gagal), setelah 10
                 // detik halaman WAJIB lanjut jalan dengan teks default, tidak boleh
                 // splash screen macet selamanya.
-                const hardTimeout = setTimeout(finish, 10000);
+                const hardTimeout = setTimeout(finish, 25000);
 
                 // Metode 1: fetch biasa (JSON), dengan timeout sendiri 5 detik
                 // supaya cepat pindah ke metode 2 kalau fetch macet/lambat.
                 const controller = ("AbortController" in window) ? new AbortController() : null;
-                const fetchTimeout = setTimeout(() => { if (controller) controller.abort(); }, 5000);
+                const fetchTimeout = setTimeout(() => { if (controller) controller.abort(); }, 18000);
 
                 fetch(CMS_ENDPOINT, { cache: "no-store", signal: controller ? controller.signal : undefined })
                     .then((res) => { if (!res.ok) throw new Error("HTTP " + res.status); return res.json(); })
