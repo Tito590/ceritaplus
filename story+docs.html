@@ -538,23 +538,9 @@
         // CMS LOADER: mengambil teks terbaru dari Google Docs (via Apps Script)
         // ==================================================================
         // GANTI DENGAN URL APPS SCRIPT kamu setelah deploy (lihat panduan di Code.gs)
-        const CMS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzxzd8N1Q08W39Pt7zGMQN_7l27tsdIisqZ08-rQcalPakF4UhwN238TUReAzygiQD1Ug/exec";
+        const CMS_ENDPOINT = "https://script.google.com/macros/s/AKfycbw3VQq9teGkrUJac8VfNLlmAy7Ku91QCv3EeLjYDMSPj0vXnrDzKYiungdbZ3NBeF7ZFQ/exec";
 
         function applyCmsData(data) {
-            // Field gambar (data-cms-img): langsung ganti src, tidak perlu logika paragraf.
-            // Tiap elemen dibungkus try/catch sendiri-sendiri supaya 1 field yang error
-            // (misal gambar gagal di-load) TIDAK menghentikan proses field lainnya.
-            document.querySelectorAll("[data-cms-img]").forEach((img) => {
-                try {
-                    const key = img.getAttribute("data-cms-img");
-                    if (Object.prototype.hasOwnProperty.call(data, key) && data[key]) {
-                        img.src = data[key];
-                    }
-                } catch (err) {
-                    console.warn("Gagal update gambar untuk field:", img.getAttribute("data-cms-img"), err);
-                }
-            });
-
             document.querySelectorAll("[data-cms]").forEach((el) => {
                 try {
                     const key = el.getAttribute("data-cms");
@@ -587,10 +573,11 @@
             });
         }
 
+        // Ambil field TEKS saja -- cepat, karena Apps Script tidak menyentuh
+        // Google Drive sama sekali untuk permintaan ini.
         function loadCmsContent() {
             return new Promise((resolve) => {
                 if (!CMS_ENDPOINT || CMS_ENDPOINT.indexOf("GANTI_DENGAN") === 0) {
-                    // Belum di-deploy / URL belum diisi -> lewati diam-diam, pakai teks default di HTML
                     resolve();
                     return;
                 }
@@ -602,23 +589,17 @@
                     resolve();
                 };
 
-                // Jaring pengaman PALING LUAR: apa pun yang terjadi (fetch macet,
-                // Apps Script lambat "cold start", JSONP juga gagal), setelah 10
-                // detik halaman WAJIB lanjut jalan dengan teks default, tidak boleh
-                // splash screen macet selamanya.
-                const hardTimeout = setTimeout(finish, 25000);
+                // Teks saja harusnya cepat -> jaring pengaman cukup 10 detik total
+                const hardTimeout = setTimeout(finish, 10000);
 
-                // Metode 1: fetch biasa (JSON), dengan timeout sendiri 5 detik
-                // supaya cepat pindah ke metode 2 kalau fetch macet/lambat.
                 const controller = ("AbortController" in window) ? new AbortController() : null;
-                const fetchTimeout = setTimeout(() => { if (controller) controller.abort(); }, 18000);
+                const fetchTimeout = setTimeout(() => { if (controller) controller.abort(); }, 6000);
 
                 fetch(CMS_ENDPOINT, { cache: "no-store", signal: controller ? controller.signal : undefined })
                     .then((res) => { if (!res.ok) throw new Error("HTTP " + res.status); return res.json(); })
                     .then((data) => { clearTimeout(fetchTimeout); applyCmsData(data); clearTimeout(hardTimeout); finish(); })
                     .catch(() => {
                         clearTimeout(fetchTimeout);
-                        // Metode 2 (fallback): JSONP lewat <script> tag, aman dari blokir CORS
                         const callbackName = "__cmsCallback_" + Date.now();
                         const script = document.createElement("script");
                         let done = false;
@@ -637,19 +618,63 @@
                         script.onerror = () => {
                             if (done) return;
                             done = true;
-                            console.warn("Gagal memuat konten CMS dari Google Docs, memakai teks default.");
+                            console.warn("Gagal memuat teks CMS dari Google Docs, memakai teks default.");
                             delete window[callbackName];
                             finish();
                         };
                         document.head.appendChild(script);
 
-                        // Jaga-jaga kalau tidak ada respons sama sekali dalam 6 detik
                         setTimeout(() => { if (!done) { done = true; finish(); } }, 6000);
                     });
             });
         }
 
+        // Ambil GAMBAR satu-satu, PARALEL, dan TIDAK menghalangi splash/teks.
+        // Tiap <img data-cms-img="..."> punya permintaannya sendiri ke Apps
+        // Script (?image=nama_field), jadi kalau 1 gambar lambat/gagal, yang
+        // lain tetap jalan normal.
+        function loadCmsImages() {
+            if (!CMS_ENDPOINT || CMS_ENDPOINT.indexOf("GANTI_DENGAN") === 0) return;
+
+            document.querySelectorAll("[data-cms-img]").forEach((img) => {
+                const key = img.getAttribute("data-cms-img");
+                const url = CMS_ENDPOINT + (CMS_ENDPOINT.indexOf("?") > -1 ? "&" : "?") + "image=" + encodeURIComponent(key);
+
+                const controller = ("AbortController" in window) ? new AbortController() : null;
+                const t = setTimeout(() => { if (controller) controller.abort(); }, 20000);
+
+                fetch(url, { cache: "no-store", signal: controller ? controller.signal : undefined })
+                    .then((res) => { if (!res.ok) throw new Error("HTTP " + res.status); return res.json(); })
+                    .then((data) => { clearTimeout(t); if (data[key]) img.src = data[key]; })
+                    .catch(() => {
+                        clearTimeout(t);
+                        // Fallback JSONP per-gambar
+                        const callbackName = "__cmsImg_" + key.replace(/[^a-zA-Z0-9_]/g, "") + "_" + Date.now();
+                        const script = document.createElement("script");
+                        let done = false;
+
+                        window[callbackName] = (data) => {
+                            if (done) return;
+                            done = true;
+                            if (data[key]) img.src = data[key];
+                            delete window[callbackName];
+                            script.remove();
+                        };
+
+                        script.src = url + "&callback=" + callbackName;
+                        script.onerror = () => {
+                            if (done) return;
+                            done = true;
+                            console.warn("Gagal memuat gambar untuk field:", key);
+                            delete window[callbackName];
+                        };
+                        document.head.appendChild(script);
+                    });
+            });
+        }
+
         document.addEventListener("DOMContentLoaded", () => {
+            loadCmsImages(); // jalan paralel di belakang layar, tidak ditunggu
             loadCmsContent().then(() => {
             const scrollerSelector = document.querySelector("[data-scroll-container]");
             const splash = document.getElementById("splash-screen");
