@@ -541,39 +541,49 @@
         const CMS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzxzd8N1Q08W39Pt7zGMQN_7l27tsdIisqZ08-rQcalPakF4UhwN238TUReAzygiQD1Ug/exec";
 
         function applyCmsData(data) {
-            // Field gambar (data-cms-img): langsung ganti src, tidak perlu logika paragraf
+            // Field gambar (data-cms-img): langsung ganti src, tidak perlu logika paragraf.
+            // Tiap elemen dibungkus try/catch sendiri-sendiri supaya 1 field yang error
+            // (misal gambar gagal di-load) TIDAK menghentikan proses field lainnya.
             document.querySelectorAll("[data-cms-img]").forEach((img) => {
-                const key = img.getAttribute("data-cms-img");
-                if (Object.prototype.hasOwnProperty.call(data, key) && data[key]) {
-                    img.src = data[key];
+                try {
+                    const key = img.getAttribute("data-cms-img");
+                    if (Object.prototype.hasOwnProperty.call(data, key) && data[key]) {
+                        img.src = data[key];
+                    }
+                } catch (err) {
+                    console.warn("Gagal update gambar untuk field:", img.getAttribute("data-cms-img"), err);
                 }
             });
 
             document.querySelectorAll("[data-cms]").forEach((el) => {
-                const key = el.getAttribute("data-cms");
-                if (!Object.prototype.hasOwnProperty.call(data, key) || !data[key]) return;
+                try {
+                    const key = el.getAttribute("data-cms");
+                    if (!Object.prototype.hasOwnProperty.call(data, key) || !data[key]) return;
 
-                const paragraphs = String(data[key]).split("\n").map((s) => s.trim()).filter(Boolean);
+                    const paragraphs = String(data[key]).split("\n").map((s) => s.trim()).filter(Boolean);
 
-                if (paragraphs.length <= 1) {
-                    el.textContent = paragraphs[0] || String(data[key]);
-                    return;
+                    if (paragraphs.length <= 1) {
+                        el.textContent = paragraphs[0] || String(data[key]);
+                        return;
+                    }
+
+                    // Lebih dari satu paragraf (redaksi menekan Enter di Google Docs):
+                    // pecah jadi beberapa elemen terpisah (bukan <br>) supaya jarak antar-paragraf
+                    // tetap konsisten dengan gaya desain (margin bawah antar paragraf).
+                    const tagName = el.tagName;
+                    const className = el.className;
+                    const frag = document.createDocumentFragment();
+                    paragraphs.forEach((text, i) => {
+                        const newEl = document.createElement(tagName);
+                        newEl.className = className;
+                        newEl.textContent = text;
+                        if (i === 0) newEl.setAttribute("data-cms", key);
+                        frag.appendChild(newEl);
+                    });
+                    el.replaceWith(frag);
+                } catch (err) {
+                    console.warn("Gagal update teks untuk field:", el.getAttribute("data-cms"), err);
                 }
-
-                // Lebih dari satu paragraf (redaksi menekan Enter di Google Docs):
-                // pecah jadi beberapa elemen terpisah (bukan <br>) supaya jarak antar-paragraf
-                // tetap konsisten dengan gaya desain (margin bawah antar paragraf).
-                const tagName = el.tagName;
-                const className = el.className;
-                const frag = document.createDocumentFragment();
-                paragraphs.forEach((text, i) => {
-                    const newEl = document.createElement(tagName);
-                    newEl.className = className;
-                    newEl.textContent = text;
-                    if (i === 0) newEl.setAttribute("data-cms", key);
-                    frag.appendChild(newEl);
-                });
-                el.replaceWith(frag);
             });
         }
 
